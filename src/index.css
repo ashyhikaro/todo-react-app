@@ -1,13 +1,148 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  text-align: center;
+  background-color: black;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 42px;
+  margin-top: 20px;
+}
+
+.in-container {
+  border-bottom: 3px solid white;
+  width: 40%;
+  height: 12vh;
+  margin: auto;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-input {
+  outline: none;
+  width: 75%;
+  height: 50%;
+  padding-left: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 0;
+  background-color: rgb(33, 33, 33);
+}
+
+.add-btn {
+  background-color: rgb(138, 33, 33);
+  border-radius: 5px;
+  height: 50%;
+  width: 23%;
+  text-transform: uppercase;
+  font-size: 1.5vh;
+}
+
+.add-btn:hover {
+  background-color: rgb(117, 28, 28);
+}
+
+.container {
+  width: 40%;
+  margin: auto;
+}
+
+.todo-con {
+  display: flex;
+  width: 100%;
+  height: 7vh;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: rgb(30, 30, 30);
+  border-left: 5px solid brown;
+  border-radius: 0 5px 5px 0;
+}
+
+.todo {
+  font-size: 3vh;
+}
+
+.left-side-con {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 85%;
+}
+
+.delete-btn {
+  font-size: 24px;
+  width: 12%;
+}
+
+.delete-btn:hover {
+  color: brown;
+}
+
+.todo-done {
+  text-decoration: line-through;
+  color: rgb(125, 125, 125);
+}
+
+.done-btn {
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.done-btn:hover {
+  color: darkolivegreen;
+}
+
+.todo-con-done {
+  background-color: rgb(16, 16, 16);
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  font-size: 26px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.menu > li > a {
+  text-decoration: none;
+}
+
+.menu > li:hover > a {
+  color: rgb(172, 172, 172);
+}
+
+.about-description {
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.about-description > strong {
+  color: brown;
 }
