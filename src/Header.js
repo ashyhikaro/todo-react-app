@@ -4,7 +4,7 @@ function Header() {
     return (
       <nav>
           <ul className='menu'>
-            <li><NavLink to="/">Main</NavLink></li>
+            <li><NavLink to="/todo-react-app/">Main</NavLink></li>
             <li><NavLink to="/about">About</NavLink></li>
           </ul>
       </nav>
