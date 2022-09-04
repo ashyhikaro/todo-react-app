@@ -1,9 +1,9 @@
 import React from 'react';
-import TodoList from './todoList';
+import TodoList from './components/todoList.js';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Header from './Header';
-import About from './About';
-import Error from './Error';
+import Header from './components/Header.js';
+import About from './components/About.js';
+import Error from './components/Error.js';
 
 function App() {
   return (
