@@ -4,6 +4,7 @@ import errorImg from './error-img/error-img-min.png'
 function Error() {
   return (
     <>
+      <p style={{width: '20%', marginLeft: '20px'}}>This is an example of a custom error page</p>
       <h1 style={{
         margin: 'auto', 
         marginTop: '15vh',
