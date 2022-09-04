@@ -56,7 +56,7 @@ h1 {
   height: 50%;
   width: 23%;
   text-transform: uppercase;
-  font-size: 85%;
+  font-size: 100%;
 }
 
 @media (max-width: 740px) {
@@ -69,6 +69,10 @@ h1 {
   .add-btn {
     font-size: 10px;
   }
+
+  .todo {
+    font-size: 14px;
+  }  
 }
 
 .add-btn:hover {
@@ -92,10 +96,6 @@ h1 {
   border-radius: 0 5px 5px 0;
 }
 
-.todo {
-  font-size: 2vw;
-}
-
 .left-side-con {
   display: flex;
   align-items: center;
@@ -104,7 +104,6 @@ h1 {
 }
 
 .delete-btn {
-  font-size: 1.5vw;
   width: 12%;
 }
 
