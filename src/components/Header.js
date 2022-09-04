@@ -6,6 +6,7 @@ function Header() {
           <ul className='menu'>
             <li><NavLink to="/todo-react-app/">Main</NavLink></li>
             <li><NavLink to="/todo-react-app/about">About</NavLink></li>
+            <li><NavLink to="/todo-react-app/error">Error</NavLink></li>
           </ul>
       </nav>
     );

@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/todo-react-app/" element={<TodoList />} />
           <Route path="/todo-react-app/about" element={<About/>} />
-          <Route path="*" element={<Error/>} />
+          <Route path="/todo-react-app/error" element={<Error/>} />
         </Routes>
       </Router>
     </>
