@@ -40,7 +40,7 @@ function TodoList() {
     <>
       <h1>TODOLIST</h1>
       <div className='in-container'>
-        <input type="text" className='todo-input' ref={inputRef} placeholder='Enter your note'/>
+        <input type="text" className='todo-input' ref={inputRef} placeholder='Enter your note' maxLength='100'/>
         <button className='add-btn' onClick={createTodo}>add</button>
       </div>
       <div className='container'>
