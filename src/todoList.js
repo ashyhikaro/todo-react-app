@@ -14,7 +14,7 @@ function TodoList() {
     }
     inputRef.current.value = ''
     setTodo([...todos, newTodo])
-  }, [todos]) 
+  }) 
 
   const doTodoDone = useCallback((e) => {
     e.target.closest('.left-side-con').childNodes[1].classList.toggle('todo-done')
@@ -28,13 +28,29 @@ function TodoList() {
       mainTarget.className = 'todo todo-done'
     }
     setTodo([...todos])
-  }, [todos]) 
+  }) 
 
   const deleteTodo = useCallback((e) => {
     let mainTarget = e.target.closest('.todo-con').id
     e.target.closest('.todo-con').childNodes[0].childNodes[1].classList.remove('todo-done')
-    setTodo([...todos.slice(0, mainTarget), ...todos.slice(++mainTarget)])
-  }, [todos]) 
+    setTodo([...todos.slice(0, mainTarget), ...todos.slice(++mainTarget)]) 
+  })
+
+  const selectAll = useCallback(() => {
+    let newArr = todos.map((todo) => {
+      if (!todo.done) {
+        todo.done = true
+        todo.className = 'todo'
+        todo.classNameContainer = 'todo-con'
+      } else {
+        todo.done = false
+        todo.classNameContainer = 'todo-con todo-con-done'
+        todo.className = 'todo todo-done'
+      }
+      return todo
+    })
+    setTodo(newArr)
+  })
 
   return (
     <>
@@ -45,7 +61,7 @@ function TodoList() {
       </div>
       <div className='container'>
 
-        {todos.map((todo, index) => {
+        {todos.length !== 0 ? todos.map((todo, index) => {
           localStorage.setItem('todos', JSON.stringify(todos))
           return  ( <div className={todo.classNameContainer} key={index} id={index}>
                       <div className='left-side-con'>
@@ -55,7 +71,14 @@ function TodoList() {
                       <button className='delete-btn' onClick={deleteTodo}>&#x1F5D1;</button>
                     </div>
           )
-        })}
+        }) : localStorage.clear()}
+
+        {todos.length === 0 ? null : 
+          <div className='bottom-btns-container'>
+            <button className='select-all-btn' onClick={selectAll}>select all</button>
+            <button className='delete-all-btn' onClick={() => setTodo([])}>delete all</button>
+          </div>
+        }
 
       </div>
     </>

@@ -152,6 +152,34 @@ h1 {
   color: brown;
 }
 
+.bottom-btns-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2%;
+}
+
+.select-all-btn, .delete-all-btn  {
+  border: 2px solid;
+  text-transform: uppercase;
+  font-size: 80%;
+  padding: 10px 8px;
+}
+
+.select-all-btn:hover, .delete-all-btn:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.select-all-btn {
+  border-color: rgb(101, 126, 57);
+  color: rgb(101, 126, 57);
+}
+
+.delete-all-btn {
+  border-color: brown;
+  color: brown;
+}
+
 @media (max-width: 740px) {
   .add-btn {
     font-size: 12px;
