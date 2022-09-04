@@ -51,8 +51,8 @@ function TodoList() {
                       <div className='left-side-con'>
                         <button type="button" className='done-btn' onClick={doTodoDone}>&#10003;</button>
                         <p className={todo.className}>{todo.title}</p>
-                        <button className='delete-btn' onClick={deleteTodo}>&#x1F5D1;</button>
                       </div>
+                      <button className='delete-btn' onClick={deleteTodo}>&#x1F5D1;</button>
                     </div>
           )
         })}

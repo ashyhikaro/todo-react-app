@@ -59,22 +59,6 @@ h1 {
   font-size: 100%;
 }
 
-@media (max-width: 740px) {
-  .add-btn {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 610px) {
-  .add-btn {
-    font-size: 10px;
-  }
-
-  .todo {
-    font-size: 14px;
-  }  
-}
-
 .add-btn:hover {
   background-color: rgb(117, 28, 28);
 }
@@ -98,14 +82,13 @@ h1 {
 
 .left-side-con {
   display: flex;
-  justify-content: space-between;
+  gap: 1%;
   align-items: center;
-  gap: 10px;
-  width: 85%;
+  width: 100%;
 }
 
 .delete-btn {
-  width: 12%;
+  font-size: 20px;
 }
 
 .delete-btn:hover {
@@ -158,3 +141,26 @@ h1 {
 .about-description > strong {
   color: brown;
 }
+
+@media (max-width: 740px) {
+  .add-btn {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 650px) {
+  .delete-btn {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 610px) {
+  .add-btn {
+    font-size: 10px;
+  }
+
+  .todo {
+    font-size: 14px;
+  }  
+}
+
