@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/todo-react-app/" element={<TodoList />} />
-          <Route path="/about" element={<About/>} />
+          <Route path="/todo-react-app/about" element={<About/>} />
           <Route path="*" element={<Error/>} />
         </Routes>
       </Router>
