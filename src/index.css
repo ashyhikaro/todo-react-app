@@ -56,7 +56,19 @@ h1 {
   height: 50%;
   width: 23%;
   text-transform: uppercase;
-  font-size: 1.5vh;
+  font-size: 100%;
+}
+
+@media (max-width: 740px) {
+  .add-btn {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 610px) {
+  .add-btn {
+    font-size: 10px;
+  }
 }
 
 .add-btn:hover {
@@ -81,7 +93,7 @@ h1 {
 }
 
 .todo {
-  font-size: 3vh;
+  font-size: 2vw;
 }
 
 .left-side-con {
@@ -92,7 +104,7 @@ h1 {
 }
 
 .delete-btn {
-  font-size: 24px;
+  font-size: 1.5vw;
   width: 12%;
 }
 
@@ -106,7 +118,7 @@ h1 {
 }
 
 .done-btn {
-  font-size: 18px;
+  font-size: 100%;
   margin-left: 5px;
 }
 
