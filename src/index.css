@@ -156,6 +156,10 @@ h1 {
   .add-btn {
     font-size: 12px;
   }
+
+  .container, .in-container {
+    width: 70%;
+  }
 }
 
 @media (max-width: 650px) {
