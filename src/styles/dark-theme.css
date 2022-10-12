@@ -1,0 +1,41 @@
+.root-dark {
+    background-color: black;
+    color: white;
+}
+
+.a-dark {
+    color: white;
+}
+
+.h1-dark {
+    color: white;
+}
+
+.p-dark {
+    color: white;
+}
+
+.menu-dark {
+    background-color: rgb(20, 20, 20);
+}
+
+.todo-input-dark {
+    background-color: rgb(33, 33, 33);
+    color: white;
+}
+
+.todo-con-dark {
+    background-color: rgb(33, 33, 33);
+}
+
+.done-btn-dark {
+    color: white;
+}
+
+.delete-btn-dark {
+    color: white;
+}
+
+.in-container-dark {
+    border-bottom-color: white;
+}

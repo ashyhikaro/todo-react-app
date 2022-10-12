@@ -6,9 +6,12 @@
   color: white;
 }
 
+.root-element {
+  height: 100vh;
+}
+
 body {
   text-align: center;
-  background-color: black;
 }
 
 button {
@@ -46,7 +49,6 @@ h1 {
   font-size: 16px;
   border-radius: 5px;
   border: 0;
-  background-color: rgb(33, 33, 33);
 }
 
 .add-btn {
@@ -130,14 +132,13 @@ h1 {
   font-size: 26px;
   padding: 20px;
   margin-bottom: 20px;
-  background-color: rgb(20, 20, 20);
 }
 
 .menu > li > a {
   text-decoration: none;
 }
 
-.menu > li:hover > a {
+.menu > li:hover > a, .switcher > p:hover {
   color: rgb(172, 172, 172);
 }
 
@@ -180,6 +181,11 @@ h1 {
   color: brown;
 }
 
+.switcher {
+  cursor: pointer;
+  margin-left: auto;
+}
+
 @media (max-width: 740px) {
   .add-btn {
     font-size: 12px;
@@ -208,5 +214,4 @@ h1 {
   .todo-input::placeholder {
     font-size: 80%;
   }
-  
 }

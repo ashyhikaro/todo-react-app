@@ -1,0 +1,41 @@
+.root-light {
+    background-color: white;
+    color: black;
+}
+
+.a-light {
+    color: rgb(30, 30, 30);
+}
+
+.h1-light {
+    color: rgb(30, 30, 30);
+}
+
+.p-light {
+    color: rgb(30, 30, 30);
+}
+
+.menu-light {
+    background-color: rgb(233, 233, 233);
+}
+
+.todo-input-light {
+    background-color: rgb(233, 233, 233);
+    color: black;
+}
+
+.todo-con-light {
+    background-color: rgb(233, 233, 233);
+}
+
+.done-btn-light {
+    color: rgb(30, 30, 30);
+}
+
+.delete-btn-light {
+    color: rgb(30, 30, 30);
+}
+
+.in-container-light {
+    border-bottom-color: rgb(30, 30, 30);
+}

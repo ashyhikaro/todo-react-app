@@ -1,17 +1,19 @@
 import React from 'react';
-import {useState, useRef} from 'react';
+import {useState, useRef, useContext} from 'react';
+import ThemeContext from '../context/ThemeContext'
 import {BottomPanel} from './BottomPanel.js';
 
 function TodoList() {
   const [todos, setTodo] = useState(() => localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [])
+  const {themeClasses} = useContext(ThemeContext)
   const inputRef = useRef()
 
   const createTodo = () => {
     let newTodo = {
       title: inputRef.current.value,
       done: false,
-      className: 'todo',
-      classNameContainer: 'todo-con',
+      className: 'todo ',
+      classNameContainer: 'todo-con ',
     }
     inputRef.current.value = ''
     setTodo([...todos, newTodo])
@@ -42,11 +44,11 @@ function TodoList() {
     let newArr = todos.map((todo) => {
       if (status.includes(false)) {
         todo.done = true
-        todo.classNameContainer = 'todo-con todo-con-done'
+        todo.classNameContainer = 'todo-con todo-con-done '
         todo.className = 'todo todo-done'
       } else {
         todo.done = false
-        todo.classNameContainer = 'todo-con'
+        todo.classNameContainer = 'todo-con '
         todo.className = 'todo'
       }
       return todo
@@ -56,24 +58,24 @@ function TodoList() {
 
   return (
     <>
-      <h1>TODOLIST</h1>
-      <div className='in-container'>
-        <input type="text" className='todo-input' ref={inputRef} placeholder='Enter your note' maxLength='100'/>
+      <h1 className={themeClasses.h1}>TODOLIST</h1>
+      <div className={themeClasses.inContainer}>
+        <input type="text" className={themeClasses.todoInput} ref={inputRef} placeholder='Enter your note' maxLength='100'/>
         <button className='add-btn' onClick={createTodo}>add</button>
       </div>
       <div className='container'>
 
         {todos.length !== 0 ? todos.map((todo, index) => {
           localStorage.setItem('todos', JSON.stringify(todos))
-          return  ( <div className={todo.classNameContainer} key={index} id={index}>
+          return  ( <div className={todo.classNameContainer + themeClasses.todoCon} key={index} id={index}>
                       <div className='left-side-con'>
-                        <button type="button" className='done-btn' onClick={doTodoDone}>&#10003;</button>
-                        <p className={todo.className}>{todo.title}</p>
+                        <button type="button" className={themeClasses.doneBtn} onClick={doTodoDone}>&#10003;</button>
+                        <p className={todo.className + themeClasses.paragraph}>{todo.title}</p>
                       </div>
-                      <button className='delete-btn' onClick={deleteTodo}>&#x1F5D1;</button>
+                      <button className={themeClasses.deleteBtn} onClick={deleteTodo}>&#x1F5D1;</button>
                     </div>
           )
-        }) : localStorage.clear()}
+        }) : null}
 
         {todos.length === 0 ? null : <BottomPanel selectAll={selectAll} setTodo={setTodo}/>}
 
