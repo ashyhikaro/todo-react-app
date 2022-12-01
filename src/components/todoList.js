@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import {useState, useRef, useContext} from 'react';
 import ThemeContext from '../context/ThemeContext'
 import {BottomPanel} from './BottomPanel.js';
@@ -9,6 +10,11 @@ function TodoList() {
   const inputRef = useRef()
 
   const createTodo = () => {
+    if (inputRef.current.value.trim().length === 0) {
+      alert('Note can not be empty')
+      return
+    }
+
     let newTodo = {
       title: inputRef.current.value,
       done: false,
@@ -21,22 +27,23 @@ function TodoList() {
 
   const doTodoDone = (e) => {
     e.target.closest('.left-side-con').childNodes[1].classList.toggle('todo-done')
+    console.log(todos)
     let mainTarget = todos[e.target.closest('.todo-con').id]
     mainTarget.done = !mainTarget.done 
     if (!mainTarget.done) {
-      mainTarget.className = 'todo'
-      mainTarget.classNameContainer = 'todo-con'
+      mainTarget.className = 'todo '
+      mainTarget.classNameContainer = 'todo-con '
     } else {
-      mainTarget.classNameContainer = 'todo-con todo-con-done'
-      mainTarget.className = 'todo todo-done'
+      mainTarget.classNameContainer = 'todo-con todo-con-done '
+      mainTarget.className = 'todo todo-done '
     }
     setTodo([...todos])
   }
 
   const deleteTodo = (e) => {
-    let mainTarget = e.target.closest('.todo-con').id
-    e.target.closest('.todo-con').childNodes[0].childNodes[1].classList.remove('todo-done')
-    setTodo([...todos.slice(0, mainTarget), ...todos.slice(++mainTarget)]) 
+    let mainTarget = +e.target.closest('.todo-con').id
+    const newTodoList = [...todos.slice(0, mainTarget), ...todos.slice(1 + mainTarget)]
+    setTodo(newTodoList)
   }
 
   const selectAll = () => {
@@ -45,16 +52,22 @@ function TodoList() {
       if (status.includes(false)) {
         todo.done = true
         todo.classNameContainer = 'todo-con todo-con-done '
-        todo.className = 'todo todo-done'
+        todo.className = 'todo todo-done '
       } else {
         todo.done = false
         todo.classNameContainer = 'todo-con '
-        todo.className = 'todo'
+        todo.className = 'todo '
       }
       return todo
     })
     setTodo(newArr)
   }
+
+  useEffect(() => {
+    if (todos.length === 0) {
+      localStorage.setItem('todos', '[]')
+    }
+  }, [todos])
 
   return (
     <>

@@ -7,7 +7,8 @@
 }
 
 .root-element {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
 }
 
 body {
@@ -28,6 +29,11 @@ button:hover {
 
 h1 {
   font-size: 42px;
+}
+
+.error_sign {
+  color: rgb(138, 33, 33); 
+  font-size: 30px;
 }
 
 .in-container {
@@ -120,7 +126,7 @@ h1 {
   color: darkolivegreen;
 }
 
-.todo-con-done {
+div .todo-con-done {
   background-color: rgb(16, 16, 16);
 }
 
